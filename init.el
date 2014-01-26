@@ -51,6 +51,10 @@
 (require 'ido)
 (ido-mode t)
 
+;;; M+x install-packages  - (melpa)  and select icicles
+(add-to-list 'load-path "/Users/kurman/.emacs.d/elpa/icicles-20131224.459/icicles-mac.el")
+ (require 'icicles)
+
 (add-to-list 'load-path "/Users/kurman/.emacs.d/custom/dart-mode")
 (require 'dart-mode)
 (add-to-list 'auto-mode-alist '("\\.dart\\'" . dart-mode))
@@ -66,6 +70,11 @@
 (require 'helm-config)
 (helm-mode 1)
 (global-set-key (kbd "C-c h") 'helm-mini)
+
+
+(add-to-list 'load-path "/Users/kurman/.emacs.d/custom/projectile")
+(require 'projectile)
+(require 'helm-projectile)
 
 (add-to-list 'load-path "/Users/kurman/.emacs.d/custom/ruby-mode")
 
@@ -98,3 +107,20 @@
 ;; Join lines
 (global-set-key "\C-cq" 'join-line)
 
+;; Limit dired columns
+(require 'ls-lisp)
+(setq ls-lisp-use-insert-directory-program nil)
+;;; Then customize by running
+;;; M-x customize-group RET ls-lisp RET
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ls-lisp-verbosity nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
